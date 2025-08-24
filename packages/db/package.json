@@ -1,0 +1,17 @@
+{
+  "name": "@acme/db",
+  "version": "0.1.0",
+  "private": true,
+  "main": "./index.ts",
+  "types": "./index.ts",
+  "scripts": {
+    "db:generate": "drizzle-kit generate",
+    "db:migrate": "drizzle-kit migrate:pg",
+    "db:push": "drizzle-kit push:pg"
+  },
+  "dependencies": {
+    "drizzle-kit": "^0.31.4",
+    "drizzle-orm": "^0.44.4",
+    "pg": "^8.16.3"
+  }
+}

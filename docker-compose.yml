@@ -1,0 +1,80 @@
+version: '3.8'
+
+services:
+  # Frontend Apps
+  web:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - '3000:3000'
+    command: pnpm run dev --filter web
+
+  admin:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - '3001:3001'
+    command: pnpm run dev --filter admin
+
+  # API Gateway
+  gateway:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - '4000:4000'
+    command: pnpm run dev --filter gateway
+
+  # Microservices
+  auth:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    command: pnpm run dev --filter auth
+
+  users:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    command: pnpm run dev --filter users
+
+  products:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    command: pnpm run dev --filter products
+
+  orders:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    command: pnpm run dev --filter orders
+
+  reviews:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    command: pnpm run dev --filter reviews
+
+  notifications:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    command: pnpm run dev --filter notifications
+
+  # Database
+  postgres:
+    image: postgres:15-alpine
+    ports:
+      - '5432:5432'
+    environment:
+      POSTGRES_DB: lmecommerce
+      POSTGRES_USER: user
+      POSTGRES_PASSWORD: password
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+volumes:
+  postgres_data:

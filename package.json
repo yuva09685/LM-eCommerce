@@ -11,8 +11,12 @@
   "devDependencies": {
     "prettier": "^3.6.2",
     "turbo": "^2.5.6",
-    "typescript": "5.9.2"
+    "typescript": "5.9.2",
+    "@repo/eslint-config": "workspace:*",
+    "@repo/typescript-config": "workspace:*",
+    "@repo/prettier-config": "workspace:*"
   },
+  "prettier": "@repo/prettier-config",
   "packageManager": "pnpm@9.0.0",
   "engines": {
     "node": ">=18"
