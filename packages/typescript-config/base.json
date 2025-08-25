@@ -14,7 +14,19 @@
     "noUnusedParameters": false,
     "preserveWatchOutput": true,
     "strict": true,
-    "skipLibCheck": true
+    "skipLibCheck": true,
+    "paths": {
+      "@acme/db": ["../../packages/db/index.ts"],
+      "@acme/db/*": ["../../packages/db/*"],
+      "@acme/ui": ["../../packages/ui/src/index.ts"],
+      "@acme/ui/*": ["../../packages/ui/src/*"],
+      "@repo/eslint-config": ["../../packages/eslint-config/index.js"],
+      "@repo/eslint-config/*": ["../../packages/eslint-config/*"],
+      "@repo/prettier-config": ["../../packages/prettier-config/index.js"],
+      "@repo/prettier-config/*": ["../../packages/prettier-config/*"],
+      "@repo/typescript-config": ["../../packages/typescript-config/index.js"],
+      "@repo/typescript-config/*": ["../../packages/typescript-config/*"]
+    }
   },
   "exclude": ["node_modules"]
 }
